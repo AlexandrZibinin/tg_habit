@@ -12,10 +12,10 @@ class HabitCreateAPIView(CreateAPIView):
     serializer_class = HabitSerializer
     queryset = Habit.objects.all()
 
-    def perform_create(self, serializer):
-        habit = serializer.save()
-        habit.owner = self.request.user
-        habit.save()
+    # def perform_create(self, serializer):
+    #     habit = serializer.save()
+    #     habit.owner = self.request.user
+    #     habit.save()
 
 
 class HabitRetrieveAPIView(RetrieveAPIView):
