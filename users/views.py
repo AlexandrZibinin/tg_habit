@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, DestroyAPIView, UpdateAPIView
 
 from users.models import User
+from users.serializer import UserSerializer
 
 
 class UserListAPIView(ListAPIView):
