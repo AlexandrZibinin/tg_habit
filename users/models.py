@@ -4,13 +4,13 @@ from django.contrib.auth.models import AbstractUser
 
 NULLABLE = {"blank": True, "null": True}
 
+
 class User(AbstractUser):
     username = None
     email = models.EmailField(unique=True, verbose_name="почта")
-    phone = models.CharField(max_length=35, **NULLABLE,
-                             verbose_name="телефон")
-    tg_name = models.CharField(max_length=35, **NULLABLE,
-                             verbose_name="телеграм")
+    phone = models.CharField(max_length=35, **NULLABLE, verbose_name="телефон")
+    tg_name = models.CharField(max_length=35, **NULLABLE, verbose_name="телеграм")
+    tg_id_chat = models.CharField(max_length=35, **NULLABLE, verbose_name="телеграм id")
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []

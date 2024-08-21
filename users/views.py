@@ -1,6 +1,12 @@
-from django.shortcuts import render
-from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, DestroyAPIView, UpdateAPIView
-from rest_framework.permissions import IsAuthenticated, AllowAny
+
+from rest_framework.generics import (
+    ListAPIView,
+    RetrieveAPIView,
+    CreateAPIView,
+    DestroyAPIView,
+    UpdateAPIView,
+)
+from rest_framework.permissions import AllowAny
 
 from users.models import User
 from users.serializer import UserSerializer
@@ -11,11 +17,9 @@ class UserListAPIView(ListAPIView):
     serializer_class = UserSerializer
 
 
-
 class UserRetrieveAPIView(RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-
 
 
 class UserCreateAPIView(CreateAPIView):
