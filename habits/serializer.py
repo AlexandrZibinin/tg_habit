@@ -7,9 +7,11 @@ from habits.validators import LinkedAndRewardValidator, NiceHabitValidator, Time
 
 class HabitSerializer(ModelSerializer):
 
+
     class Meta:
         model = Habit
         fields = "__all__"
         validators = [LinkedAndRewardValidator(), NiceHabitValidator(), TimeToCompleteValidator(),
                       NiceHabitNotRewardValidator(), PeriodCompleteValidator()]
+
 
