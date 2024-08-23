@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "rest_framework_simplejwt",
+    "django_celery_beat",
     "corsheaders",
     "drf_yasg",
     "habits",
@@ -123,3 +124,10 @@ TGAPIKEY = os.getenv("TGAPIKEY")
 # ]
 
 CORS_ALLOW_ALL_ORIGINS = False
+
+CELERY_BEAT_SCHEDULE = {
+    'task-name': {
+        'task': 'habits.tasks.send_message',  # Путь к задаче
+        'schedule': timedelta(minutes=1),  # Расписание выполнения задачи (например, каждые 10 минут)
+    },
+}
